@@ -1,0 +1,8 @@
+unzip \*.zip
+rm kopie-2.zip kopie-1.zip
+unzip \*.zip
+rm *.zip
+for f in *.png; do magick "$f" "${f%.png}.jpg"; done
+rm *.png
+mkdir -p Przekonwertowane
+for f in *.jpg; do magick "$f" -resize x720 -units PixelsPerInch -density 96 "Przekonwertowane/$f"; done

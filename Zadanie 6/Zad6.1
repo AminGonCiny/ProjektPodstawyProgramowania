@@ -1,0 +1,1 @@
+awk '{gsub(/^[ \t]+/, "", $0); if ($0 ~ /^".*": ".*",?$/) print "// " $0 RS $0; else print $0}' en-7_2.json5 > pl-7_2.json5

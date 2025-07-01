@@ -1,0 +1,26 @@
+echo '<!DOCTYPE html>' > galeria.html
+echo '<html lang="pl">' >> galeria.html
+echo '<head>' >> galeria.html
+echo '  <meta charset="UTF-8">' >> galeria.html
+echo '  <title>Moja Galeria</title>' >> galeria.html
+echo '</head>' >> galeria.html
+echo '<link rel="stylesheet" href="style.css"> >> galeria.html
+echo '<body>' >> galeria.html
+echo '  <h1>Moja Galeria Obrazów</h1>' >> galeria.html
+echo '  <p>Projekt by Piorun</p>' >> galeria.html
+echo '<div style="overflow:auto">' >> galeria.html
+
+for plik in *.png; do
+  echo '  <div class="obrazek-blok">' >> galeria.html
+  echo '    <div class="ramka">' >> galeria.html
+  echo "      <a target=\"_blank\" href=\"$plik\">" >> galeria.html
+  echo "        <img src=\"$plik\" alt=\"$plik\">" >> galeria.html
+  echo "      </a>" >> galeria.html
+  echo "      <div class=\"podpis\">$plik</div>" >> galeria.html
+  echo '    </div>' >> galeria.html
+  echo '  </div>' >> galeria.html
+done
+
+echo '</div>' >> galeria.html
+echo '</body>' >> galeria.html
+echo '</html>' >> galeria.html
